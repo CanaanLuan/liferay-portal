@@ -1,0 +1,16 @@
+@component-name = "portal-smoke"
+definition {
+
+	property portal.acceptance = "true";
+	property portal.release = "true";
+	property portal.upstream = "true";
+
+	@description = "Ensure that we can sign in with the rights of admin."
+	@priority = 3
+	test SignIn {
+
+		SignIn.signInTestSetup();
+        AssertElementPresent(locator1 = "UserBar#USER_AVATAR_ICON");
+		
+        }
+}
